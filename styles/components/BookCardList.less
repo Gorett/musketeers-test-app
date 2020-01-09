@@ -1,5 +1,23 @@
 @import "../colors";
+@import "../fonts";
 
 .book-card-list {
   background: @color-white;
+  margin: 1rem auto;
+  max-width: 720px;
+
+  & > header {
+    display: grid;
+    grid-template-columns: 6fr 4fr;
+
+    & > p {
+      font: 400 .875rem @font-secondary;
+      font-style: italic;
+      text-align: center;
+
+      &.purple {
+        color: @color-purple;
+      }
+    }
+  }
 }

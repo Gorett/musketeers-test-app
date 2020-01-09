@@ -25,6 +25,11 @@ const bookListMock = [
 
 export const BookCardList = () => (
     <div className={styles['book-card-list']}>
+        <header>
+            <p>You have lent 5 books to friends</p>
+            <p className={styles.purple}>Lent to:</p>
+        </header>
+
         {bookListMock.map(book => (
             <BookCard key={`${book.id}-key`} {...book} />
         ))}
