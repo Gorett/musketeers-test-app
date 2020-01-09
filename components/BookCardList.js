@@ -1,5 +1,7 @@
 import React from 'react';
 
-export const BookCardList = () => (<div>Book Card List</div>);
+import styles from '../styles/components/BookCardList.less';
+
+export const BookCardList = () => (<div className={styles['book-card-list']}>Book Card List</div>);
 
 export default BookCardList;
