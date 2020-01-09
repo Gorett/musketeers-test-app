@@ -23,17 +23,30 @@ const bookListMock = [
         borrower: 'Matt Damon',
     }];
 
-export const BookCardList = () => (
-    <div className={styles['book-card-list']}>
-        <header>
-            <p>You have lent 5 books to friends</p>
-            <p className={styles.purple}>Lent to:</p>
-        </header>
+export const BookCardList = () => {
 
-        {bookListMock.map(book => (
-            <BookCard key={`${book.id}-key`} {...book} />
-        ))}
-    </div>
-);
+    const getListTitle = () => {
+        let listTitle = 'No lent books found';
+
+        if(Array.isArray(bookListMock) && bookListMock.length) {
+            listTitle = `You have lent ${bookListMock.length} books to friends`;
+        }
+
+        return listTitle;
+    };
+
+    return (
+        <div className={styles['book-card-list']}>
+            <header>
+                <p>{getListTitle()}</p>
+                <p className={styles.purple}>Lent to:</p>
+            </header>
+
+            {bookListMock.map(book => (
+                <BookCard key={`${book.id}-key`} {...book} />
+            ))}
+        </div>
+    );
+};
 
 export default BookCardList;
