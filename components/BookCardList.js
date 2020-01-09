@@ -10,15 +10,15 @@ const bookListMock = [
         id: '123hfas',
         title: 'In Search of Lost Time',
         author: 'Marcel Proust',
-        lentAt: null,
-        returnedAt: null,
+        lentAt: '02.11.2019',
+        returnedAt: '03.11.2019',
         borrower: 'Will Smith',
     },
     {
         id: '4h12k1s',
         title: 'One Hundred Years of Solitude',
         author: 'Gabriel Garcia Marquez',
-        lentAt: null,
+        lentAt: '02.11.2019',
         returnedAt: null,
         borrower: 'Matt Damon',
     }];
@@ -42,8 +42,8 @@ export const BookCardList = () => {
                 <p className={styles.purple}>Lent to:</p>
             </header>
 
-            {bookListMock.map(book => (
-                <BookCard key={`${book.id}-key`} {...book} />
+            {bookListMock.map((book, i) => (
+                <BookCard index={i+1} key={`${book.id}-key`} book={book} />
             ))}
         </div>
     );
