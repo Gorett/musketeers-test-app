@@ -1,6 +1,6 @@
 import React from 'react';
 
-import BookCard from "./BookCard";
+import BookCard from './BookCard';
 
 import styles from '../styles/components/BookCardList.less';
 
@@ -23,11 +23,11 @@ const bookListMock = [
         borrower: 'Matt Damon',
     }];
 
-export const BookCardList = () => {
-
+export const BookCardList = ({ openModal }) => {
     const getListTitle = () => {
         let listTitle = 'No lent books found';
 
+        // TODO get lent books length
         if(Array.isArray(bookListMock) && bookListMock.length) {
             listTitle = `You have lent ${bookListMock.length} books to friends`;
         }
@@ -43,7 +43,7 @@ export const BookCardList = () => {
             </header>
 
             {bookListMock.map((book, i) => (
-                <BookCard index={i+1} key={`${book.id}-key`} book={book} />
+                <BookCard index={i+1} key={`${book.id}-key`} book={book} onEditClick={openModal} />
             ))}
         </div>
     );
