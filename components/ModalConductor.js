@@ -1,10 +1,14 @@
 import React from 'react';
 import Modal from 'react-modal';
 
+import styles from '../styles/components/ModalConductor.less';
+
 Modal.setAppElement('#index-page');
 
 const customStyles = {
     content: {
+        padding: '0',
+        margin: '0',
         top: '50%',
         left: '50%',
         right: 'auto',
@@ -20,15 +24,15 @@ export const ModalConductor = ({title, isModalOpen, closeModal}) => (
             isOpen={isModalOpen}
             style={customStyles}
         >
-            <header>
+            <header className={styles['modal-header']}>
                 <h3>{title}</h3>
             </header>
             <section>
 
             </section>
-            <footer>
-                <button onClick={closeModal}>Cancel</button>
-                <button onClick={() => {}}>Save</button>
+            <footer className={styles['modal-footer']}>
+                <button className={`${styles.btn} ${styles['secondary-btn']}`} onClick={closeModal}>Cancel</button>
+                <button className={`${styles.btn} ${styles['primary-btn']}`} onClick={() => {}}>Save</button>
             </footer>
         </Modal>
     )
