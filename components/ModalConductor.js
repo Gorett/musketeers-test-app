@@ -1,7 +1,5 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import Modal from 'react-modal';
-
-import ModalContext from '../contexts/modal';
 
 Modal.setAppElement('#index-page');
 
@@ -16,9 +14,7 @@ const customStyles = {
     }
 };
 
-export const ModalConductor = ({ title, isModalOpen, closeModal }) => {
-
-    return (
+export const ModalConductor = ({title, isModalOpen, closeModal}) => (
         <Modal
             contentLabel="Book Modal"
             isOpen={isModalOpen}
@@ -32,10 +28,10 @@ export const ModalConductor = ({ title, isModalOpen, closeModal }) => {
             </section>
             <footer>
                 <button onClick={closeModal}>Cancel</button>
-                <button>Save</button>
+                <button onClick={() => {}}>Save</button>
             </footer>
         </Modal>
     )
-};
+;
 
 export default ModalConductor;
