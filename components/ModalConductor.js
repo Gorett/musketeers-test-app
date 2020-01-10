@@ -16,16 +16,24 @@ const customStyles = {
     }
 };
 
-export const ModalConductor = () => {
-    const { store } = useContext(ModalContext);
+export const ModalConductor = ({ title, isModalOpen, closeModal }) => {
 
     return (
         <Modal
             contentLabel="Book Modal"
-            isOpen={store.isModalOpen}
+            isOpen={isModalOpen}
             style={customStyles}
         >
-            <h2>ModalConductor</h2>
+            <header>
+                <h3>{title}</h3>
+            </header>
+            <section>
+
+            </section>
+            <footer>
+                <button onClick={closeModal}>Cancel</button>
+                <button>Save</button>
+            </footer>
         </Modal>
     )
 };

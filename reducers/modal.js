@@ -1,4 +1,4 @@
-export const initialState = { isModalOpen: false };
+export const initialState = { isModalOpen: false, title: 'Lending a book away' };
 
 const reducer = (state, action) => {
     switch (action.type) {

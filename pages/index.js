@@ -2,7 +2,7 @@ import React, { useReducer } from 'react';
 
 import BookCardListContainer from '../containers/BookCardListContainer';
 import PageHeader from '../components/PageHeader';
-import ModalConductor from '../components/ModalConductor';
+import ModalConductor from '../containers/ModalConductorContainer';
 
 import modalReducer, { initialState } from '../reducers/modal';
 import ModalContext from '../contexts/modal';
